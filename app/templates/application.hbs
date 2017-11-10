@@ -1,5 +1,9 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-{{welcome-page}}
-{{!-- Feel free to remove this! --}}
+<nav class="navbar navbar-inverse">
+  {{link-to 'Booking Sync' 'index' class="navbar-brand"}}
+  <ul class="nav navbar-nav navbar-right">
+    <li>{{link-to 'Sign Up' 'signup'}}</li>
+    <li>{{link-to 'Login' 'login'}}</li>
+  </ul>
+</nav>
 
 {{outlet}}
