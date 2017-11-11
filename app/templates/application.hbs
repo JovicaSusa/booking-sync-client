@@ -6,4 +6,14 @@
   </ul>
 </nav>
 
+{{#each flashMessages.queue as |flash|}}
+  {{#flash-message flash=flash as |component flash|}}
+    {{#if flash.componentName}}
+      {{component flash.componentName content=flash.content}}
+    {{else}}
+      <p>{{flash.message}}</p>
+    {{/if}}
+  {{/flash-message}}
+{{/each}}
+
 {{outlet}}

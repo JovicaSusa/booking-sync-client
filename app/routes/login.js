@@ -21,8 +21,11 @@ export default Route.extend({
 
       this.get('session').
         authenticate('authenticator:oauth2', username, password).
-          then(() => this.transitionTo('/')).
-          catch(() => {});
+          then(() => {
+            this.get('flashMessages').success('Successful login');
+            this.transitionTo('/')
+          }).
+          catch(() => this.get('flashMessages').danger('Unsucessful login'));
 
     }
   }
