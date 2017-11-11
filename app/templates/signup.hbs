@@ -1,0 +1,37 @@
+<div class='row text-center'>
+  <h2>Sign Up</h2>
+</div>
+
+<div class='col-sm-4 col-sm-offset-4'>
+  <form>
+    <div class='form-group'>
+      <label>Username</label>
+      {{input
+        data-test-signup-username
+        value=(mut model.username)
+        class='form-control'}}
+    </div>
+    <div class='form-group'>
+      <label>Password</label>
+      {{input
+        data-test-signup-password
+        type='password'
+        value=(mut model.password)
+        class='form-control'}}
+    </div>
+    <div class='form-group'>
+      <label>Password Confirmation</label>
+      {{input
+        data-test-signup-password-confirmation
+        type='password'
+        value=(mut model.passwordConfirmation)
+        class='form-control'}}
+    </div>
+
+    <div class='text-center'>
+      <button data-test-signup-button class='btn btn-primary' {{action 'signUp' model}}>
+        Sign up
+      </button>
+    </div>
+  </form>
+</div>
