@@ -7,22 +7,29 @@
   <table class='table'>
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Daily Rate</th>
+        <th class='text-center'>Name</th>
+        <th class='text-center'>Daily Rate</th>
         <th></th>
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class='text-center'>
       {{#each model as |rental|}}
         <tr data-test-rental-item>
-          <td>{{rental.name}}</td>
-          <td>{{rental.dailyRate}}</td>
-          <td>
+          <td class='text-center'>{{rental.name}}</td>
+          <td class='text-center'>{{rental.dailyRate}}</td>
+          <td class='text-center'>
             {{#link-to 'rentals.rental.edit' rental}}
               <span data-test-edit-rental-link class='glyphicon glyphicon-edit'>
               </span>
             {{/link-to}}
+          </td>
+          <td class='text-center'>
+            <span
+              data-test-delete-rental-link
+              {{action 'deleteRental' rental}}
+              class='glyphicon glyphicon-trash'>
+            </span>
           </td>
         </tr>
       {{/each}}

@@ -50,3 +50,19 @@ test('admin can update rental', function(assert) {
     assert.equal(server.db.rentals.find(1).name, 'Updated Rental');
   });
 });
+
+test('admin can delete rental', function(assert) {
+  assert.expect(1);
+
+  const user = server.create('user');
+  server.create('rental');
+  authenticateSession(this.application, { user_id: user.id });
+
+  visit('/admin');
+
+  andThen(() => click(find('[data-test-delete-rental-link]')));
+
+  andThen(() => {
+    assert.equal(find('[data-test-rental-item]').length, 0);
+  });
+});
