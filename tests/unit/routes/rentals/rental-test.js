@@ -1,8 +1,8 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('route:rentals/new', 'Unit | Route | rentals/new', {
+moduleFor('route:rentals/rental', 'Unit | Route | rentals/rental', {
   // Specify the other units that are required for this test.
-  needs: ['service:session']
+  // needs: ['controller:foo']
 });
 
 test('it exists', function(assert) {

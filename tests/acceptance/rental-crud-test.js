@@ -27,3 +27,26 @@ test('admin can create rental', function(assert) {
       'should display new rental');
   });
 });
+
+test('admin can update rental', function(assert) {
+  assert.expect(1);
+
+  const user = server.create('user');
+  server.create('rental');
+  authenticateSession(this.application, { user_id: user.id });
+  visit('/admin');
+
+  andThen(() => {
+    click(find('[data-test-edit-rental-link]'))
+  });
+
+  andThen(() => {
+    fillIn(find('[data-test-rental-name]'), 'Updated Rental');
+  });
+
+  andThen(() => click(find('[data-test-edit-rental-button]')));
+
+  andThen(() => {
+    assert.equal(server.db.rentals.find(1).name, 'Updated Rental');
+  });
+});

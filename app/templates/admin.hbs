@@ -10,6 +10,7 @@
         <th>Name</th>
         <th>Daily Rate</th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
@@ -17,6 +18,12 @@
         <tr data-test-rental-item>
           <td>{{rental.name}}</td>
           <td>{{rental.dailyRate}}</td>
+          <td>
+            {{#link-to 'rentals.rental.edit' rental}}
+              <span data-test-edit-rental-link class='glyphicon glyphicon-edit'>
+              </span>
+            {{/link-to}}
+          </td>
         </tr>
       {{/each}}
     </tbody>
