@@ -3,6 +3,13 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
   model() {
-    return this.store.findAll('rental');
+    return this.store.createRecord('rental');
+  },
+
+  actions: {
+    save(rental) {
+      rental.save().
+        then(() => this.transitionTo('admin'));
+    }
   }
 });

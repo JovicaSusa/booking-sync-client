@@ -1,5 +1,7 @@
 export default function() {
   this.post('/users');
+  this.get('/rentals');
+  this.post('/rentals');
   this.post('/token', (schema, request) => {
     const username = request.requestBody.match(/username=([^&]*)/)[1];
     const password = request.requestBody.match(/password=([^&]*)/)[1];

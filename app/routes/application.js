@@ -6,7 +6,7 @@ const { inject: { service }, Route } = Ember;
 export default Route.extend(ApplicationRouteMixin, {
   session: service(),
 
-  setupController(controller, model) {
+  setupController(controller) {
     this._super(...arguments);
 
     controller.set('session', this.get('session'));

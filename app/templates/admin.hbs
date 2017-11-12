@@ -1,0 +1,24 @@
+<div class='row text-center'>
+  <h2>Admin</h2>
+  {{link-to data-test-new-rental-link 'Create New Rental' 'rentals.new' class='btn btn-primary'}}
+</div>
+
+<div class='col-sm-8 col-sm-offset-2'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Daily Rate</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |rental|}}
+        <tr data-test-rental-item>
+          <td>{{rental.name}}</td>
+          <td>{{rental.dailyRate}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
