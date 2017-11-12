@@ -19,7 +19,7 @@ test('successfuly login user with valid credentials', function(assert) {
     click(find('[data-test-login-button]'));
   });
 
-  andThen(() => assert.equal(currentURL(), '/') );
+  andThen(() => assert.equal(currentURL(), '/admin') );
 });
 
 test('login fails when invalid credentials', function(assert) {

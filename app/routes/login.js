@@ -23,7 +23,7 @@ export default Route.extend({
         authenticate('authenticator:oauth2', username, password).
           then(() => {
             this.get('flashMessages').success('Successful login');
-            this.transitionTo('/')
+            this.transitionTo('admin')
           }).
           catch(() => this.get('flashMessages').danger('Unsucessful login'));
 

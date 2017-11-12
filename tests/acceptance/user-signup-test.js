@@ -18,7 +18,7 @@ test('user can successfuly sign up', function(assert) {
     click(find('[data-test-signup-button]'));
   });
 
-  andThen(() => assert.equal(currentURL(), '/') );
+  andThen(() => assert.equal(currentURL(), '/admin') );
 });
 
 test('user can not sign up when there are errors', function(assert) {

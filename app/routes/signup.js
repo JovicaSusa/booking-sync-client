@@ -18,7 +18,7 @@ export default Route.extend({
           return this.get('session').
             authenticate('authenticator:oauth2', username, password);
         }).
-        then(() => this.transitionTo('index')).
+        then(() => this.transitionTo('admin')).
         catch(() => {});
     }
   }
