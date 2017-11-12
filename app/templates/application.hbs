@@ -1,8 +1,14 @@
 <nav class="navbar navbar-inverse">
   {{link-to 'Booking Sync' 'index' class="navbar-brand"}}
   <ul class="nav navbar-nav navbar-right">
-    <li>{{link-to data-test-signup-link 'Sign Up' 'signup'}}</li>
-    <li>{{link-to data-test-login-link 'Login' 'login'}}</li>
+    {{#if session.isAuthenticated}}
+      <li {{action 'logout'}}>
+        <a>Logout</a>
+      </li>
+    {{else}}
+      <li>{{link-to data-test-signup-link 'Sign Up' 'signup'}}</li>
+      <li>{{link-to data-test-login-link 'Login' 'login'}}</li>
+    {{/if}}
   </ul>
 </nav>
 
