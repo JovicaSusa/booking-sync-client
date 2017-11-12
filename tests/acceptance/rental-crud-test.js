@@ -20,7 +20,7 @@ test('admin can create rental', function(assert) {
     fillIn(find('[data-test-rental-daily-rate]'), 10);
   });
 
-  andThen(() => click(find('[data-test-create-rental-button]')));
+  andThen(() => click(find('[data-test-rental-submit]')));
 
   andThen(() => {
     assert.equal(find('[data-test-rental-item]').length, 1,
@@ -44,7 +44,7 @@ test('admin can update rental', function(assert) {
     fillIn(find('[data-test-rental-name]'), 'Updated Rental');
   });
 
-  andThen(() => click(find('[data-test-edit-rental-button]')));
+  andThen(() => click(find('[data-test-rental-submit]')));
 
   andThen(() => {
     assert.equal(server.db.rentals.find(1).name, 'Updated Rental');
