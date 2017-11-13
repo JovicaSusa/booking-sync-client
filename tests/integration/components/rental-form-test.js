@@ -17,7 +17,7 @@ test('it renders', function(assert) {
 
   const rental = server.create('rental');
   const externalAction = (rentalArg) => {
-    assert.deepEqual(rentalArg, rental, 'rental is passed to external action');
+    assert.deepEqual(rentalArg._content, rental, 'rental is passed to external action');
   };
 
   this.set('rental', rental);
