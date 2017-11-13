@@ -4,8 +4,8 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
   clientEmail: attr('string'),
-  startAt:     attr('date'),
-  endAt:       attr('date'),
+  startAt:     attr('utc'),
+  endAt:       attr('utc'),
   price:       attr('number'),
 
   rental: belongsTo()

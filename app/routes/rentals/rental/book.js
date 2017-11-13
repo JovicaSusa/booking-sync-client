@@ -11,7 +11,7 @@ export default Ember.Route.extend({
   actions: {
     save(booking) {
       booking.save().
-        then(() => alert('success'));
+        then(() => this.flashMessages.success('You have succesfuly booked this rental'));
     }
   }
 });
