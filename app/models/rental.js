@@ -6,5 +6,5 @@ export default Model.extend({
   dailyRate: attr('number'),
   name:      attr('string'),
 
-  booking: hasMany()
+  bookings: hasMany()
 });
