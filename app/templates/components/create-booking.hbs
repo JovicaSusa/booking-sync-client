@@ -1,0 +1,38 @@
+<div class='col-sm-6 col-sm-offset-3'>
+  <div class='row'>
+    <div class='col-sm-6'>
+      <label>Start At:</label>
+      {{#power-calendar
+        center=centerForStart
+        selected=booking.startAt
+        onCenterChange=(action (mut centerForStart) value='date')
+        onSelect=(action (mut booking.startAt) value='moment') as |calendar|}}
+          {{calendar.nav}}
+          {{calendar.days}}
+      {{/power-calendar}}
+    </div>
+    <div class='col-sm-6'>
+      <label>End At:</label>
+      {{#power-calendar
+        center=centerForEnd
+        selected=booking.endAt
+        onCenterChange=(action (mut centerForEnd) value='date')
+        onSelect=(action (mut booking.endAt) value='moment') as |calendar|}}
+          {{calendar.nav}}
+          {{calendar.days}}
+      {{/power-calendar}}
+    </div>
+  </div>
+  <div class='form-group'>
+    <label>Client Email</label>
+    {{input
+      data-test-signup-username
+      value=(mut booking.clientEmail)
+      class='form-control'}}
+  </div>
+  <p><strong>Price:</strong> {{booking.price}}</p>
+
+  <div class='row text-center'>
+    <button class='btn btn-primary' {{action 'handleSubmit'}}>Book</button>
+  </div>
+</div>
