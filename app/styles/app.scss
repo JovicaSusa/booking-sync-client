@@ -1,0 +1,14 @@
+@import "ember-bootstrap/bootstrap";
+@import "ember-power-calendar";
+
+.padding-3 {
+  padding: 3%;
+}
+
+.margin-5 {
+  margin-top: 5%;
+}
+
+.ember-power-calendar {
+  @include ember-power-calendar($cell-size: 30px);
+}
