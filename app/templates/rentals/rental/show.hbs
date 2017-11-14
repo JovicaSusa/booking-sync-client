@@ -1,0 +1,36 @@
+<div class='row text-center'>
+  <h2>{{model.name}}</h2>
+  <p><strong>Daily Rate:</strong>{{model.dailyRate}}</p>
+  {{link-to 'Book' 'rentals.rental.book' model.id class='btn btn-primary'}}
+</div>
+
+<hr>
+
+<div class='row text-center'>
+  <h3>Bookings</h3>
+
+<div class='col-sm-8 col-sm-offset-2'>
+  <table class='table'>
+    <thead>
+      <tr>
+        <th class='text-center'>Booking No</th>
+        <th class='text-center'>Period</th>
+        <th class='text-center'>Client Email</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model.bookings as |booking|}}
+        <tr>
+          <td>{{booking.id}}</td>
+          <td class='text-center'>{{booking.period}} Days</td>
+          <td class='text-center'>{{booking.clientEmail}}</td>
+          <td class='text-center'><span class='glyphicon glyphicon-edit'></span></td>
+          <td class='text-center'><span class='glyphicon glyphicon-trash'></span></td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+</div>
