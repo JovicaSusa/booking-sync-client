@@ -1,15 +1,15 @@
 import { validatePresence } from 'ember-changeset-validations/validators';
 import validateOverlap from './validate-overlap';
-import validateBookingLength from './booking-length';
+import validateBookingPeriod from './booking-period';
 
 export default {
   startAt: [
     validateOverlap(),
-    validateBookingLength()
+    validateBookingPeriod()
   ],
   endAt: [
     validateOverlap(),
-    validateBookingLength(),
+    validateBookingPeriod(),
   ],
   clientEmail: validatePresence(true),
   price: validatePresence(true)
