@@ -11,6 +11,7 @@
         <th class='text-center'>Daily Rate</th>
         <th></th>
         <th></th>
+        <th></th>
       </tr>
     </thead>
     <tbody class='text-center'>
@@ -30,6 +31,9 @@
               {{action 'deleteRental' rental}}
               class='glyphicon glyphicon-trash'>
             </span>
+          </td>
+          <td>
+            {{link-to 'View' 'rentals.rental.show' rental.id class='btn btn-primary'}}
           </td>
         </tr>
       {{/each}}
