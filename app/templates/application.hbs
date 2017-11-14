@@ -2,6 +2,7 @@
   {{link-to 'Booking Sync' 'index' class="navbar-brand"}}
   <ul class="nav navbar-nav navbar-right">
     {{#if session.isAuthenticated}}
+      <li>{{link-to 'Rentals' 'admin'}}</li>
       <li {{action 'logout'}}>
         <a>Logout</a>
       </li>

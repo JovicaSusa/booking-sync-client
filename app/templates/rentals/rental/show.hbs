@@ -27,7 +27,10 @@
           <td class='text-center'>{{booking.period}} Days</td>
           <td class='text-center'>{{booking.clientEmail}}</td>
           <td class='text-center'><span class='glyphicon glyphicon-edit'></span></td>
-          <td class='text-center'><span class='glyphicon glyphicon-trash'></span></td>
+          <td class='text-center'>
+            <span class='glyphicon glyphicon-trash' {{action 'deleteBooking' booking}}>
+            </span>
+          </td>
         </tr>
       {{/each}}
     </tbody>

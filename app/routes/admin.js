@@ -8,8 +8,10 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
   actions: {
     deleteRental(rental) {
-      rental.destroyRecord().
+      if (confirm('Are you sure that you want to delete this rental')) {
+        rental.destroyRecord().
         then(() => this.flashMessages.success('Rental deleted'));
+      }
     }
   }
 });
