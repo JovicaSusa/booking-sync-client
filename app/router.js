@@ -19,6 +19,9 @@ Router.map(function() {
       this.route('show');
     });
   });
+  this.route('booking', { path: '/:booking_id' }, function() {
+    this.route('edit');
+  });
 });
 
 export default Router;

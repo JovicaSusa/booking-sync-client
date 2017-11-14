@@ -26,7 +26,12 @@
           <td>{{booking.id}}</td>
           <td class='text-center'>{{booking.period}} Days</td>
           <td class='text-center'>{{booking.clientEmail}}</td>
-          <td class='text-center'><span class='glyphicon glyphicon-edit'></span></td>
+          <td class='text-center'>
+            {{#link-to 'booking.edit' booking.id}}
+              <span class='glyphicon glyphicon-edit'>
+              </span>
+            {{/link-to}}
+            </td>
           <td class='text-center'>
             <span class='glyphicon glyphicon-trash' {{action 'deleteBooking' booking}}>
             </span>
