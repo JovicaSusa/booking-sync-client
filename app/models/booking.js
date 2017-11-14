@@ -3,7 +3,7 @@ import Model from 'ember-data/model';
 import attr from 'ember-data/attr';
 import { belongsTo } from 'ember-data/relationships';
 
-const { computed } = Ember;
+const { computed, isEmpty } = Ember;
 
 export default Model.extend({
   clientEmail: attr('string'),
@@ -16,6 +16,10 @@ export default Model.extend({
   period: computed('startAt', 'endAt', function() {
     const { endAt, startAt } = this.getProperties('startAt', 'endAt');
 
-    return endAt.diff(startAt, 'days');
+    if (!isEmpty(endAt) && !isEmpty(startAt)) {
+      return endAt.diff(startAt, 'days');
+    } else {
+      return '/';
+    }
   })
 });
